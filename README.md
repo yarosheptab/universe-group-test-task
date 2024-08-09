@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Frontend Test Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Тестове завдання на позицію Middle Front-End розробника
 
-## Available Scripts
+Твоє завдання - створити простий React додаток, який дозволяє користувачам конвертувати введений текст у PDF документ.
 
-In the project directory, you can run:
+### Вимоги
 
-### `npm start`
+**Інтерфейс:** Інтерфейс користувача повинен містити текстове поле для введення тексту, кнопку "Конвертувати в PDF" та область для відображення результату - PDF файлу.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Конвертація:** При натисканні на кнопку "Конвертувати в PDF", введений користувачем текст повинен бути конвертований у формат PDF. Для цього використовуйте HTTP API (нижче наведено приклад запиту).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Відображення результату:** Після завершення конвертації, PDF файл повинен відобразитися у pdf переглядачі (Можеш використати будь-яку бібліотеку, наприклад [цю](https://github.com/ansu5555/pdf-viewer-reactjs)).
 
-### `npm test`
+**Збереження результатів** Необхідно також реалізувати функціонал для збереження та відображення історії конвертацій (Список файлів, при кліку відображаємо зконвертований документ). Для збереження історії використай локальні браузерні сховища.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Тести**: Опишіть базовий unit-тест, який покриває функціонал конвертації (Jest або React Testing Library).
 
-### `npm run build`
+**Документація**: Додайте коротку документацію, з описом стуктури та овновних модулів проекту.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Додаткові вказівки
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. В якості бібліотеки UI компонентів використай - [Tailwind CSS](https://tailwindcss.com/)
+2. Для ковертації використовуйте API запит:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+POST http://95.217.134.12:4010/create-pdf?apiKey={YOUR_API_KEY}
+Body: {
+    "text": "Universe"
+}
 
-### `npm run eject`
+API_KEY = 78684310-850d-427a-8432-4a6487f6dbc4
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Після завершення завдання, надішли посилання на репозиторій з вихідним кодом та відео з демонстрацію додатку.
