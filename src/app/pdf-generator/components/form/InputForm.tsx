@@ -62,6 +62,7 @@ export const InputForm = ({ onConvert }: InputFormProps) => {
                     <button
                         disabled={isLoading}
                         className='w-full bg-neutral-100 text-neutral-950 disabled:bg-neutral-400 enabled:hover:bg-neutral-100/90 transition-all h-11 rounded-lg px-8 font-semibold flex justify-center items-center'
+                        aria-label='Конвертувати в PDF'
                     >
                         {isLoading ? (
                             <Spinner className='h-8 w-8' />
@@ -72,6 +73,7 @@ export const InputForm = ({ onConvert }: InputFormProps) => {
                     <button
                         className='aspect-square bg-transparent text-neutral-100 enabled:hover:bg-neutral-700 transition-all h-11 rounded-lg px-8 font-semibold flex justify-center items-center'
                         onClick={() => setIsHistoryOpened(true)}
+                        aria-label='History'
                     >
                         <History />
                     </button>
