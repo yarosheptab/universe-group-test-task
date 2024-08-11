@@ -10,7 +10,7 @@ export const PdfGeneratorContainer = () => {
     };
 
     return (
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 max-w-full px-4'>
             <InputForm onConvert={handlePdfCreate} />
             {openedDocument && <PdfViewer base64Document={openedDocument} />}
         </div>

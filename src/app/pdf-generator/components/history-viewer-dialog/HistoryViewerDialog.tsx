@@ -31,7 +31,7 @@ export const HistoryViewerDialog = memo(
                                 </h1>
                                 <button
                                     onClick={() => onClose()}
-                                    className='aspect-square bg-transparent text-neutral-100 h-11 rounded-lg px-8 font-semibold flex justify-center items-center'
+                                    className='aspect-square bg-transparent text-neutral-100 h-11 rounded-lg px-4 font-semibold flex justify-center items-center'
                                 >
                                     <X />
                                 </button>

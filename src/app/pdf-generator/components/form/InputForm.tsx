@@ -56,7 +56,7 @@ export const InputForm = ({ onConvert }: InputFormProps) => {
                     }}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder='Введіть текст...'
-                    className='resize-none w-[700px] h-[300px] w-max-[100%] p-8 bg-black border-2 border-neutral-500 disabled:border-neutral-800 text-lg text-neutral-100 disabled:text-neutral-500 outline-none focus-visible:ring-2 ring-offset-background focus-visible:ring-offset-2 rounded-2xl placeholder:text-neutral-600'
+                    className='resize-none w-[700px] h-[300px] max-w-full p-8 bg-black border-2 border-neutral-500 disabled:border-neutral-800 text-lg text-neutral-100 disabled:text-neutral-500 outline-none focus-visible:ring-2 ring-offset-background focus-visible:ring-offset-2 rounded-2xl placeholder:text-neutral-600'
                 />
                 <div className='flex flex-row gap-2'>
                     <button
@@ -71,7 +71,7 @@ export const InputForm = ({ onConvert }: InputFormProps) => {
                         )}
                     </button>
                     <button
-                        className='aspect-square bg-transparent text-neutral-100 enabled:hover:bg-neutral-700 transition-all h-11 rounded-lg px-8 font-semibold flex justify-center items-center'
+                        className='aspect-square bg-transparent text-neutral-100 enabled:hover:bg-neutral-700 transition-all h-11 rounded-lg px-4 font-semibold flex justify-center items-center'
                         onClick={() => setIsHistoryOpened(true)}
                         aria-label='History'
                     >
