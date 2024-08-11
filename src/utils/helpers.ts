@@ -1,4 +1,5 @@
-import { API_KEY } from "./constants";
+import { API_KEY, LOCAL_STORAGE_HISTORY_KEY } from "./constants";
+import { HistoryRecord } from "./types";
 
 export const convertTextToBase64PDF = (
     text: string
@@ -35,4 +36,34 @@ export const blobToBase64 = (blob: Blob) => {
             resolve(reader.result);
         };
     });
+};
+
+export const getHistoryFromLocalStorage = (): HistoryRecord[] => {
+    try {
+        return (
+            JSON.parse(
+                localStorage.getItem(LOCAL_STORAGE_HISTORY_KEY) ?? "null"
+            ) ?? []
+        );
+    } catch (error) {
+        return [];
+    }
+};
+
+export const savePdfToLocalStorage = (content: string) => {
+    try {
+        const localStorageValue = getHistoryFromLocalStorage();
+        const newLocalStorageValue = [
+            ...localStorageValue,
+            { content, createdAt: new Date().toISOString() },
+        ];
+
+        localStorage.setItem(
+            LOCAL_STORAGE_HISTORY_KEY,
+            JSON.stringify(newLocalStorageValue)
+        );
+        return newLocalStorageValue;
+    } catch (error: any) {
+        return [];
+    }
 };
