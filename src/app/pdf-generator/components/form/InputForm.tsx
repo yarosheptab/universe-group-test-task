@@ -5,7 +5,7 @@ import {
     convertTextToBase64PDF,
     savePdfToLocalStorage,
 } from "../../../../utils/helpers";
-import { HistoryViewerDialog } from "../history-viewer/HistoryViewerDialog";
+import { HistoryViewerDialog } from "../history-viewer-dialog/HistoryViewerDialog";
 
 export interface InputFormProps {
     onConvert: (content: string) => void;

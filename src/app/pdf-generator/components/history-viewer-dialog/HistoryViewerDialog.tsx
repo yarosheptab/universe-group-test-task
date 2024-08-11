@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { X } from "tabler-icons-react";
 import { getHistoryFromLocalStorage } from "../../../../utils/helpers";
-import { HistoryRow } from "./HistoryRow";
-import { HistoryViewerDialogHeader } from "./HistoryViewerDialogHeader";
+import { HistoryRow } from "./components/HistoryRow";
+import { HistoryViewerDialogHeader } from "./components/HistoryViewerDialogHeader";
 
 export interface HistoryViewerDialogProps {
     open: boolean;

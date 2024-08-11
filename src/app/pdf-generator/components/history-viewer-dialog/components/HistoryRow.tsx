@@ -1,5 +1,5 @@
 import { ChevronRight } from "tabler-icons-react";
-import { HistoryRecord } from "../../../../utils/types";
+import { HistoryRecord } from "../../../../../utils/types";
 
 export interface HistoryRowProps {
     historyRecord: HistoryRecord;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputForm } from "./components/form/InputForm";
-import { PdfViewer } from "./components/viewer/PdfViewer";
+import { PdfViewer } from "./components/pdf-viewer/PdfViewer";
 
 export const PdfGeneratorContainer = () => {
     const [openedDocument, setOpenedDocument] = useState<string | null>(null);
