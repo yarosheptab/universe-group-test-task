@@ -3,14 +3,14 @@
 Структура проєкту виглядає наступним чином:
 
 1. PDF generator
-   a. Form
-   b. History Viewer
-   c. PDF Viewer
+    - Form
+    - History Viewer
+    - PDF Viewer
 2. Shared Components
 3. Utils
-   a. Types
-   b. Helpers
-   c. Constants
+    - Types
+    - Helpers
+    - Constants
 
 # PDF Generator
 
