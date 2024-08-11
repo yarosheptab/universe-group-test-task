@@ -12,12 +12,9 @@ export interface HistoryViewerDialogProps {
 
 export const HistoryViewerDialog = memo(
     function ({ open, onClose, onSelect }: HistoryViewerDialogProps) {
-        const getHistory = () => {
-            const history = getHistoryFromLocalStorage();
-            return history.sort((a, b) =>
-                b.createdAt.localeCompare(a.createdAt)
-            );
-        };
+        const history = getHistoryFromLocalStorage().sort((a, b) =>
+            b.createdAt.localeCompare(a.createdAt)
+        );
 
         return (
             <>
@@ -27,7 +24,7 @@ export const HistoryViewerDialog = memo(
                             className='bg-neutral-950/80 absolute w-full h-full z-0'
                             onClick={() => onClose()}
                         />
-                        <section className='flex flex-col gap-4 border rounded-2xl border-neutral-100 relative z-10 max-w-lg w-full p-5 min-h-60 bg-neutral-950'>
+                        <section className='flex flex-col gap-4 border rounded-2xl border-neutral-100 relative z-10 max-w-lg w-full p-5 min-h-36 bg-neutral-950'>
                             <HistoryViewerDialogHeader>
                                 <h1 className='text-neutral-100 text-3xl font-semibold'>
                                     Історія конвертацій
@@ -40,7 +37,7 @@ export const HistoryViewerDialog = memo(
                                 </button>
                             </HistoryViewerDialogHeader>
                             <div className='flex flex-col'>
-                                {getHistory().map((historyRecord, index) => (
+                                {history.map((historyRecord, index) => (
                                     <HistoryRow
                                         key={index}
                                         historyRecord={historyRecord}
@@ -49,6 +46,14 @@ export const HistoryViewerDialog = memo(
                                         }
                                     />
                                 ))}
+                                {!history.length && (
+                                    <div className='text-neutral-500'>
+                                        <p>
+                                            Схоже Ви ще нічого не конвертували
+                                            раніше :)
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </section>
                     </div>
