@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { History } from "tabler-icons-react";
 import { Spinner } from "../../../../shared/components/Spinner";
-import { convertTextToBase64PDF } from "../../../../utils/helpers";
+import {
+    convertTextToBase64PDF,
+    savePdfToLocalStorage,
+} from "../../../../utils/helpers";
 
 export interface InputFormProps {
     onConvert: (content: string) => void;
@@ -25,6 +28,7 @@ export const InputForm = ({ onConvert }: InputFormProps) => {
 
         if (result.status === "success") {
             onConvert(result.result);
+            savePdfToLocalStorage(result.result);
             setInputValue("");
         } else {
             setConvertError(result.error);
